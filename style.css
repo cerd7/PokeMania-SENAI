@@ -1,0 +1,661 @@
+@font-face {
+    font-family: pixel;
+    src: url(./assets/font/Pixellari.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: pixel;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/*HEADER*/
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 50px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+header.scrolled {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 15px 50px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    display: flex;
+    color: #e63946;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    height: 40px;
+}
+
+.logo:hover{
+    transition: 0.3s ease;
+    transform: scale(1.1);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 30px;
+    color: #3b3b3b;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: #e63946;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: #e63946;
+}
+
+/*SEÇÃO SOBRE*/
+#sobre {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px;
+}
+
+#sobre::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(./assets/image/background_florest.png) center/cover no-repeat fixed;
+    filter: blur(5px);
+    z-index: -1; /*Fica atrás do conteúdo*/
+}
+
+.sobre-conteudo {
+    max-width: 1000px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+.sobre-conteudo h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.898);
+}
+
+.sobre-conteudo p {
+    font-size: 1.8rem;
+    line-height: 1.0;
+    margin-bottom: 50px;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.898);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 100px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card h3 {
+    font-size: 1.9rem;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.898);
+}
+
+.card p {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.898);
+}
+
+/*SEÇÃO POKÉDEX*/
+#pokedex {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px;
+    background: radial-gradient(circle at center, #0b39a4 0%, #000 100%);
+}
+
+.pokedex-container {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.titulo-pokedex {
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 50px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.pokedex {
+    background: linear-gradient(145deg, #dc0a2d, #cc0000);
+    border-radius: 30px 30px 40px 40px;
+    padding: 40px;
+    width: 450px;
+    margin: 0 auto;
+    box-shadow: 
+        0 0 0 4px #000,
+        0 0 0 8px #444,
+        0 20px 50px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.pokedex::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, #4fc3f7 0%, #0288d1 40%, #01579b 100%);
+    border-radius: 50%;
+    box-shadow: 
+        inset 0 -3px 8px rgba(0, 0, 0, 0.3),
+        0 0 0 5px #fff,
+        0 0 0 8px #000,
+        0 0 20px rgba(79, 195, 247, 0.6);
+}
+
+.luz-superior {
+    position: absolute;
+    top: 20px;
+    left: 100px;
+    display: flex;
+    gap: 15px;
+}
+
+.luz-superior div {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #000;
+}
+
+.luz_vermelha {
+    background: #f44336;
+    box-shadow: 0 0 10px #f44336;
+}
+
+.luz_amarela {
+    background: #ffeb3b;
+    box-shadow: 0 0 10px #ffeb3b;
+}
+
+.luz_verde {
+    background: #4caf50;
+    box-shadow: 0 0 10px #4caf50;
+}
+
+.tela-container {
+    background: #f0f0f0;
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 80px;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+    border: 4px solid #000;
+}
+
+.pokemon-img {
+    width: 100%;
+    height: 280px;
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.pokemon-img::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 2px dashed rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+#pokemon-imagem {
+    max-width: 200px;
+    max-height: 200px;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease;
+}
+
+#pokemon-imagem:hover {
+    transform: scale(1.1);
+}
+
+.info {
+    background: #263238;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+#pokemon-nome {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    color: #ffeb3b;
+}
+
+.pokemon-id {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-bottom: 15px;
+}
+
+#pokemon-types {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.type-badge {
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* TIPOS DE POKÉMON */
+.type-fire { background: #f08030; }
+.type-water { background: #6890f0; }
+.type-grass { background: #78c850; }
+.type-electric { background: #f8d030; }
+.type-psychic { background: #f85888; }
+.type-ice { background: #98d8d8; }
+.type-dragon { background: #7038f8; }
+.type-dark { background: #705848; }
+.type-fairy { background: #ee99ac; }
+.type-normal { background: #a8a878; }
+.type-fighting { background: #c03028; }
+.type-flying { background: #a890f0; }
+.type-poison { background: #a040a0; }
+.type-ground { background: #e0c068; }
+.type-rock { background: #b8a038; }
+.type-bug { background: #a8b820; }
+.type-ghost { background: #705898; }
+.type-steel { background: #b8b8d0; }
+
+.botao-controle {
+    margin-top: 25px;
+}
+
+#input-busca {
+    width: 100%;
+    padding: 15px;
+    border-radius: 25px;
+    border: 3px solid #000;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    background: #fff;
+    transition: box-shadow 0.3s ease;
+}
+
+#input-busca:focus {
+    box-shadow: 0 0 15px rgba(255, 235, 59, 0.5);
+}
+
+.botoes {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.btn_btn-nav,
+.btn_btn-deck {
+    flex: 1;
+    padding: 12px;
+    border: 3px solid #000;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #fff;
+}
+
+.btn_btn-nav {
+    background: #2196f3;
+    color: white;
+}
+
+.btn_btn-deck {
+    background: #4caf50;
+    color: white;
+}
+
+.btn_btn-nav:hover,
+.btn_btn-deck:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn_btn-nav:active,
+.btn_btn-deck:active {
+    transform: translateY(0);
+}
+
+/*SEÇÃO DECK*/
+#deck {
+    position: relative; /* Necessário para o pseudo-elemento */
+    overflow: hidden; /* Garante que o blur não "vaze" */
+    min-height: 100vh;
+    padding: 100px 20px;
+    background: none; /* Removemos o background daqui */
+}
+
+#deck::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(./assets/image/background_florest.png) center/cover no-repeat fixed;
+    filter: blur(5px);
+    transform: scale(1.05); /* evita bordas duras após o blur */
+    z-index: -1; /* Fica atrás do conteúdo */
+    opacity: 0.9; /* opcional: deixa o fundo levemente translúcido */
+}
+
+.deck-container {
+    position: relative; /* garante que fique acima do ::before */
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.titulo-deck {
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.712);
+}
+
+.subtitulo-deck {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.712);
+}
+
+.deck-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.deck-vazio,
+.empty-deck {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: white;
+    padding: 60px 20px;
+}
+
+.deck-vazio-icon,
+.empty-deck-icon {
+    font-size: 5rem;
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.deck-vazio p,
+.empty-deck p {
+    font-size: 1.6rem;
+    opacity: 0.9;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.898);
+}
+
+.deck-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.deck-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+}
+
+.deck-card:hover {
+    transform: translateY(-10px);
+}
+
+.deck-card-header {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.deck-card-img {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    display: block;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
+}
+
+.deck-card-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-top: 10px;
+    color: #333;
+}
+
+.deck-card-id {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.deck-card-types {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin: 15px 0;
+    flex-wrap: wrap;
+}
+
+.deck-stats {
+    background: #f5f5f5;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+    font-size: 0.9rem;
+}
+
+.stat-name {
+    font-weight: 600;
+    color: #555;
+}
+
+.stat-value {
+    font-weight: 700;
+    color: #e63946;
+}
+
+.deck-abilities {
+    margin-top: 15px;
+}
+
+.deck-abilities h4 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.ability-tag {
+    display: inline-block;
+    padding: 5px 12px;
+    background: #e3f2fd;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    margin: 3px;
+    color: #1976d2;
+    text-transform: capitalize;
+}
+
+.remove-btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background: #f44336;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.remove-btn:hover {
+    background: #d32f2f;
+}
+
+/*FOOTER*/
+footer {
+    background: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    font-size: 1rem;
+    background:#000;
+}
+
+footer a {
+    color: #e63946;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/*RESPONSIVIDADE*/
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .sobre-conteudo h1 {
+        font-size: 2.5rem;
+    }
+
+    .pokedex {
+        width: 100%;
+        max-width: 400px;
+        padding: 30px 20px;
+    }
+
+    .deck-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .titulo-pokedex,
+    .titulo-deck {
+        font-size: 2rem;
+    }
+}

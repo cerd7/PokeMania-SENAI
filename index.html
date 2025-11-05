@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeMania</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <!-- header com opções de navegação --> 
+    <header id="header">
+        <!-- nav bar -->
+        <nav>
+            <div class="logo"><img src="./assets/image/Pokeball-PNG-Picture.png" alt="logo_imagem"><h2>PokeMania</h2></div>
+            <ul class="nav-links">
+                <li><a href="#sobre">Home</a></li>
+                <li><a href="#pokedex">Pokedex</a></li>
+                <li><a href="#deck">Meu deck</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção #1 - sobre o projeto -->
+    <section id="sobre">
+        <div class="sobre-conteudo">
+            <h1> Bem-vindo a <b>PokeMania</b>!</h1>
+            <p>Contando com mais de 1000 pokemons, aqui é o lugar perfeito para um novo treinador. Busque por companheiros e os inclua em seu deck!</p>
+            <div class="cards">
+                <div class="card">
+                    <h3>Busca por pokemons</h3>
+                    <p>Pesquise por nome ou ID e encontre seu pokemon.</p>
+                </div>
+                <div class="card">
+                    <h3>informações completas</h3>
+                    <p>Visualize HP, Ataque, Defesa e todas as características detalhadas.</p>
+                </div>
+                <div class="card">
+                    <h3>Deck personalizado</h3>
+                    <p>Monte as melhores combinações para futuros combates</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção #2 - pokedex -->
+    <section id="pokedex">
+        <div class="pokedex-container">
+            <h1 class="titulo-pokedex">Pokedex Digital</h1>
+            <div class="pokedex">
+                <div class="luz-superior">
+                    <div class="luz_vermelha"></div>
+                    <div class="luz_amarela"></div>
+                    <div class="luz_verde"></div>
+                </div>
+
+                <div class="tela-container">
+                    <div class="pokemon-img">
+                        <img id="pokemon-imagem" alt="Pokemon">
+                    </div>
+
+                    <div class="info">
+                        <h2 id="pokemon-nome">Carregando...</h2>
+                        <p class="pokemon-id">ID: <span id="pokemon-id">--</span></p>
+                        <div id="pokemon-types"></div>
+                    </div>
+                </div>
+
+                <div class="botao-controle">
+                    <input type="text" id="input-busca" placeholder="Buscar Pokémon por nome ou ID...">
+                    <div class="botoes">
+                        <button class="btn_btn-nav" id="prev-btn"> Anterior </button>
+                        <button class="btn_btn-nav" id="next-btn"> Próximo </button>
+                    </div>
+
+                    <div class="botoes">
+                        <button class="btn_btn-deck" id="add-deck-btn"> Adicionar ao deck </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção #3 - Deck -->
+    <section id="deck">
+        <div class="deck-container">
+            <h1 class="titulo-deck"> Deck de combate </h1>
+            <p class="subtitulo-deck"> Seus pokemons em um só lugar. </p>
+
+            <div id="deck-grid" class="deck-grid">
+                <div class="deck-vazio">
+                    <div class="deck-vazio-icon"></div>
+                    <p>Comece a adicionar seus pokemons!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Desenvolvido por <strong>Caio Rodrigues</strong> | Utilizando <a href="https://pokeapi.co/" target="_blank">PokeAPI</a></p>
+        <p>© 2025 PokeMania - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
