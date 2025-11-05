@@ -29,7 +29,7 @@ CSS3	Estilização e responsividade
 JavaScript (ES6+)	Lógica, manipulação do DOM e consumo da API
 PokeAPI	Fonte de dados sobre os Pokémon
 LocalStorage	Armazenamento do deck do usuário
-🚀 Como Executar o Projeto
+ Como Executar o Projeto
 
 Clone este repositório
 
@@ -62,7 +62,7 @@ PokeMania/
 ├── script.js                  # Lógica da aplicação
 └── README.md                  # Este arquivo :)
 
-🔍 Detalhes Técnicos
+ Detalhes Técnicos
 
 O projeto utiliza event listeners para navegação e busca.
 
@@ -72,11 +72,11 @@ Todos os dados são obtidos da PokeAPI, com tratamento de erros e exibição de 
 
 A função renderDeck() atualiza automaticamente o conteúdo visual ao adicionar ou remover Pokémon.
 
-🧑‍💻 Autor
+ ### Autor:
 
 Caio Rodrigues
 
-🪶 Licença
+### Licença:
 
 Este projeto está sob a licença MIT.
 Sinta-se à vontade para utilizá-lo e aprimorá-lo!
